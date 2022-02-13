@@ -1,8 +1,13 @@
 const express = require('express')
 const colors = require('colors')
 const errorHandler = require('./middlewares/errorMiddleware')
+const connectDB = require('./config/db')
 const dotenv = require('dotenv').config()
 
+// Connect to MongoDB
+connectDB()
+
+// Create app
 const app = express()
 
 // Body parser Middleware
